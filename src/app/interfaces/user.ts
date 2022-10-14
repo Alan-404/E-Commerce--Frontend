@@ -1,3 +1,6 @@
+import { Account } from "../models/account"
+import { User } from "../models/user"
+
 export interface RegisterUserDTO{
     firstName: String,
     lastName: String,
@@ -10,4 +13,17 @@ export interface RegisterUserDTO{
     role: boolean,
     avatar: any
 }
+
+
+export interface InfoResponseRegisterUser{
+    success: boolean,
+    user: User,
+    account: Account
+}
+
+export interface ResponseRegisterUser{
+    registerUser: InfoResponseRegisterUser
+}
+
+
 

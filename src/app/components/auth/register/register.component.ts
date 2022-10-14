@@ -46,14 +46,14 @@ export class RegisterComponent implements OnInit {
     
   }
 
-  async submit(){
-    console.log(this.registerData)
-    await this.userService.registerUser(this.registerData).subscribe(async(response) => {
+  submit(){
+    this.userService.registerUser(this.registerData).subscribe(response => {
       if (response.data){
-        const data = response.data.registerUser
-        if (data.success){
-          const test = await this.userService.saveAvatar(this.registerData.avatar, data.user.id)
-          console.log(test)
+        const info = response.data.registerUser
+        if (info.success){
+          this.userService.saveAvatar(this.registerData.avatar, info.user.id).subscribe(rep => {
+            console.log(rep)
+          })
         }
       }
     })
