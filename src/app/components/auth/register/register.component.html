@@ -1,0 +1,44 @@
+<div class="register-form w-50 d-flex flex-column">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First Name</mat-label>
+        <input (change)="getData($event)" name="firstName" matInput placeholder="" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Last Name</mat-label>
+        <input (change)="getData($event)" name="lastName" matInput placeholder="" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input (change)="getData($event)" name="email" matInput placeholder="">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone</mat-label>
+        <input (change)="getData($event)" name="phone" matInput placeholder="" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Birth Date</mat-label>
+        <input (change)="getData($event)" name="bdate" type="date" matInput placeholder="" >
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Gender</mat-label>
+        <mat-select (selectionChange)="getGender($event.value)" name="gender">
+          <mat-option value="male">
+            Male
+          </mat-option>
+          <mat-option value="female">
+            Female
+          </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <input (change)="getData($event)" name="address" type="text" matInput placeholder="" >
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input (change)="getData($event)" name="password" type="password" matInput placeholder="" >
+    </mat-form-field>
+    <input (change)="uploadImage($event)" type="file"/>
+    <img class="image-show" [src]="imageShow"/>
+    <button class="mt-4" (click)="submit()" mat-raised-button color="accent">Submit</button>
+</div>
